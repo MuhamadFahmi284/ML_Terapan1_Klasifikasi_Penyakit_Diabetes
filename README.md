@@ -3,7 +3,7 @@
 
 ---
 
-# **Detail Laporan : Klasifikasi Penyakit Diabetes**
+# **Detail Laporan : Klasifikasi Penyakit Diabetes 🍬**
 
 ---
 
