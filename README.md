@@ -264,6 +264,22 @@ Berikut adalah contoh hyperparameter tuning menggunakan GridSearchCV untuk Rando
 
 ![Image](https://github.com/user-attachments/assets/3ea53370-8921-4392-a49c-d05cc72a5e1f)
 ![Image](https://github.com/user-attachments/assets/6bc6a186-770b-49b9-90a3-d71dd160a360)
+### Penjabaran Hasil Hyperparameter Tuning
+✅ **Best Parameters (dari GridSearchCV):**
+
+![Image](https://github.com/user-attachments/assets/9fb80d09-41fc-420e-a451-bfb5cfbdf177)
+
+
+### 📌 Penjelasan masing-masing parameter:
+**Parameter	Nilai Terpilih	Penjelasan**
+
+![Image](https://github.com/user-attachments/assets/43adcc38-e080-4adf-8021-312348f6f38b)
+
+### 📊 Evaluasi Performa Model Terbaik
+Akurasi: 0.97
+Presisi: 0.99
+Recall: 0.68
+F1 Score: 0.81
 
 ### 4. Deep Learning
 Model deep learning menggunakan **Neural Network** dengan arsitektur sederhana yang terdiri dari beberapa lapisan.
@@ -308,6 +324,47 @@ Dari hasil evaluasi, model **Random Forest** memiliki performa terbaik berdasark
 ## Evaluation
 
 Pada tahap ini, dilakukan evaluasi terhadap performa model berdasarkan berbagai metrik, yaitu **Akurasi**, **Precision**, **Recall**, dan **F1 Score**. Selain itu, analisis confusion matrix digunakan untuk memahami prediksi yang benar dan salah dari model.
+
+### 📌 Keterkaitan Evaluasi Model – dengan Business Understanding
+
+## 🔎 Problem Statement 1:
+"Bagaimana memanfaatkan data kesehatan untuk memprediksi risiko diabetes pada seseorang?"
+
+Keterkaitan dengan Hasil Evaluasi:
+
+Data kesehatan telah dimanfaatkan untuk membangun model prediktif menggunakan algoritma ML.
+
+Hasil confusion matrix menunjukkan bahwa semua model mampu mengenali pasien dengan diabetes (positif) dan tanpa diabetes (negatif) dengan performa yang bervariasi.
+
+Misalnya, Logistic Regression mendeteksi 1.047 dari 1.708 kasus diabetes dengan baik (True Positive), sementara Deep Learning mendeteksi hingga 1.146 kasus diabetes.
+
+## 🔎 Problem Statement 2:
+"Algoritma machine learning apa yang paling efektif dalam memprediksi risiko diabetes?"
+
+Keterkaitan dengan Hasil Evaluasi:
+Berdasarkan confusion matrix dan perbandingan performa antar model:
+
+![Image](https://github.com/user-attachments/assets/11e4faaa-aade-47e4-8434-5da8d795f571)
+
+🔍 Model Deep Learning dan Random Forest memiliki keseimbangan terbaik antara True Positive dan False Negative, sehingga dapat dianggap paling efektif dalam konteks prediksi risiko diabetes dengan presisi dan sensitivitas yang seimbang.
+
+## 🔎 Problem Statement 3:
+"Bagaimana meningkatkan akurasi model prediksi risiko diabetes?"
+
+Keterkaitan dengan Hasil Evaluasi:
+
+Random Forest ditingkatkan melalui hyperparameter tuning, menghasilkan peningkatan akurasi dan F1 score.
+
+Akurasi Random Forest mencapai 97%, presisi 99%, F1 Score 0.81 — hasil ini ditunjukkan dalam confusion matrix: False Negative menurun (534) dibanding Logistic Regression (661).
+
+Hal ini membuktikan bahwa strategi optimasi seperti GridSearchCV berperan besar dalam peningkatan performa model.
+
+### 🎯 Goals – Kesesuaian dengan Hasil
+✅ Mengembangkan model prediktif — Berbagai model telah diimplementasikan dengan hasil prediksi yang kuat.
+
+✅ Evaluasi model — Metrik Akurasi, Presisi, Recall, dan F1 Score telah digunakan secara menyeluruh.
+
+✅ Optimasi performa — Hyperparameter tuning telah diterapkan pada Random Forest dan menghasilkan model yang lebih akurat dan presisi.
 
 ---
 
@@ -382,11 +439,10 @@ Analisis:
 
 ---
 ### Kesimpulan
-1. **Model terbaik**: Random Forest.
+1. Evaluasi berdasarkan confusion matrix mendukung tujuan proyek untuk memprediksi risiko diabetes secara cepat dan akurat.
+2. Model Deep Learning dan Random Forest merupakan kandidat terbaik, dengan keseimbangan antara mendeteksi pasien positif dan meminimalkan kesalahan prediksi.
+3. Proyek ini telah menjawab business problem melalui pendekatan data-driven yang terstruktur, dengan hasil akhir yang dapat membantu proses skrining awal diabetes pada skala luas.
+4. **Model terbaik**: Random Forest.
    - Alasan: Random Forest memiliki keseimbangan terbaik antara Akurasi (0.97), Precision (0.94), Recall (0.69), dan F1 Score (0.80).
-2. Logistic Regression dan Deep Learning juga memiliki performa yang baik, namun sedikit kalah dibandingkan Random Forest.
-3. SVM memiliki precision tinggi (0.97) namun recall rendah (0.55), sehingga kurang baik dalam mendeteksi kasus positif diabetes.
-
-Model Random Forest dipilih untuk digunakan pada tahap implementasi karena performa terbaiknya dalam mendeteksi diabetes berdasarkan dataset yang digunakan.
-
-**---Ini adalah bagian akhir laporan---**
+5. Logistic Regression dan Deep Learning juga memiliki performa yang baik, namun sedikit kalah dibandingkan Random Forest.
+6. SVM memiliki precision tinggi (0.97) namun recall rendah (0.55), sehingga kurang baik dalam mendeteksi kasus positif diabetes.
